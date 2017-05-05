@@ -117,7 +117,7 @@ public class Boat implements Vehicle {
 	}
 
 	public void setCrew(Person crew){
-		if(!this.captain.equals(crew)){
+		if(this.captain != crew){
 			this.crew.add(crew);
 			this.allcrew.add(crew);
 		}
