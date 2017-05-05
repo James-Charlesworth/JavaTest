@@ -6,14 +6,14 @@ public class Boat implements Vehicle {
 
 	private String name;
 	private String country;
-	private int size;//in feet?
+	private double size;//in feet?
 	private ArrayList<Person> allcrew = new ArrayList<Person>();
 	private Person captain;
 	private ArrayList<Person> owners = new ArrayList<Person>();
 	private ArrayList<Person> crew = new ArrayList<Person>();
 	
 	
-	public Boat(String name, String country, int size, Person person, String role) {
+	public Boat(String name, String country, double size, Person person, String role) {
 		super();
 		this.name = name;
 		this.country = country;
@@ -24,7 +24,12 @@ public class Boat implements Vehicle {
 			setOwners(person);
 		}else if(role.equals("crew")){
 			this.crew.add(person);
+		}else if (role.equals("")){
+			this.captain = captain;
+			this.crew = crew;
+			this.owners = owners;
 		}
+			
 	}
 
 
@@ -48,7 +53,7 @@ public class Boat implements Vehicle {
 	}
 
 
-	public int getSize() {
+	public double getSize() {
 		return size;
 	}
 
