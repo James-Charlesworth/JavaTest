@@ -7,7 +7,7 @@ public class Marina {
 	private String name;
 	private String address;
 	private int maxBoats;
-	private int currentBoats;
+	private static int currentBoats = 0;
 	private ArrayList<Boat> boats = new ArrayList<Boat>();
 	
 	
@@ -16,6 +16,7 @@ public class Marina {
 		this.name = name;
 		this.address = address;
 		this.maxBoats = maxBoats;
+		currentBoats++;
 	}
 
 
@@ -62,6 +63,10 @@ public class Marina {
 
 	public void setBoats(ArrayList<Boat> boats) {
 		this.boats = boats;
+	}
+	
+	public void addBoat(Boat boat){
+		this.boats.add(boat);
 	}
 
 

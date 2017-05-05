@@ -19,9 +19,9 @@ public class Boat implements Vehicle {
 		this.country = country;
 		this.size = size;
 		if (role.equals("captain")){
-			this.captain = person;
+			setCaptain(person);
 		}else if(role.equals("owner")){
-			this.owners.add(person);
+			setOwners(person);
 		}else if(role.equals("crew")){
 			this.crew.add(person);
 		}
@@ -92,6 +92,10 @@ public class Boat implements Vehicle {
 			this.allcrew.add(p);
 		}
 	}
+	
+	public void setOwners(Person owner){
+		this.owners.add(owner);
+	}
 
 
 	public ArrayList<Person> getCrew() {
@@ -107,8 +111,8 @@ public class Boat implements Vehicle {
 			
 	}
 
-	public void addCrew(Person crew){
-		if(this.captain.equals(crew)){
+	public void setCrew(Person crew){
+		if(!this.captain.equals(crew)){
 			this.crew.add(crew);
 			this.allcrew.add(crew);
 		}
